@@ -24,6 +24,13 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
+        .redd {
+            color: red;
+            border: 1px solid #ff6c6c;
+            outline: none;
+        }
+
+
         #group-affiliate-form label {
             font-weight: bold;
             display: block;
@@ -100,6 +107,18 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        .spann {
+            display: none;
+            color: red;
+            margin-bottom: 20px;
+        }
+
+
+
+        .redd:focus {
+            border-color: #ff6c6c;
+        }
     </style>
 </head>
 <body>
@@ -162,22 +181,29 @@
 <script>
 
 
-function phnlength() {
-    let phn = document.querySelector('#phone_number');
-    let htn = document.querySelector('.btn');
-       let num = 10; 
-       let phnvalue = phn.value.length;
-       
-       // Corrected comparison
-       if (phnvalue === num) {
-          
-           htn.disabled = false;
-       } else {
-           alert('Phone number is invalid. Please enter a valid phone number.');
-           htn.disabled = true;
-         
-       }
+
+    function phnlength() {
+        let phn = document.querySelector('#phone_number');
+        let htn = document.querySelector('.btn');
+        let warn = document.querySelector('.spann');
+        let num = 10;
+        let phnvalue = phn.value.length;
+
+        // Corrected comparison
+        if (phnvalue === num) {
+            phn.classList.remove("redd");
+            htn.disabled = false;
+            warn.style.display = "none";
+
+        } else {
+            alert('Phone number is invalid. Please enter a valid phone number.');
+            htn.disabled = true;
+            phn.classList.add("redd");
+            warn.style.display = "block";
+        }
     }
+
+
 
     function getCanadianTime() {
        let now = new Date();

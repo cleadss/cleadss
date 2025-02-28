@@ -174,10 +174,10 @@ function phnlength() {
            htn.disabled = false;
        } else {
            alert('Phone number is invalid. Please enter a valid phone number.');
-
+           htn.disabled = true;
          
        }
-   }
+    }
 
     function getCanadianTime() {
        let now = new Date();

@@ -273,6 +273,7 @@ document.addEventListener("DOMContentLoaded", loadGoogleMaps);
     })
     .then(response => response.json())
     .then(data => {
+         document.getElementById("popup").style.display = "none";
         alert("Form submitted successfully to " + selectedSheet + "!");
         document.getElementById("group-affiliate-form").reset();
     })

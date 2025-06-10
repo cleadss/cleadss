@@ -220,7 +220,7 @@
 function loadGoogleMaps() {
    if (typeof google === "undefined" || !google.maps) {
        var script = document.createElement("script");
-       script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyA-kVEl5qZDIt5TKjaUAhnKEVLV_pTIODQ&libraries=places&callback=initAutocomplete";
+       script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAwcIbiXi5Z1rbn6MHvwa8h3iNUrIW2UFQ&libraries=places&callback=initAutocomplete";
        script.async = true;
        script.defer = true;
        document.head.appendChild(script);
@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", loadGoogleMaps);
 
     formData.append("sheetName", selectedSheet); // Append sheet name to the request
 
-    fetch("https://script.google.com/macros/s/AKfycbwMs04io2wnOI2XjNWRZoii9GTwYzlolk8fNG3__UU02KIZvE200bMKBz7PVcX_L-o-_Q/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbyT062zBU60CAATgP58hnR2b_8doORjBmkP1EE1egRBibBYe-H5RUNGbL1ji8m3gyQ1/exec", {
         method: "POST",
         body: formData
     })

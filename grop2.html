@@ -215,7 +215,7 @@
    }
 
    
-   getCanadianTime()
+  
 
 function loadGoogleMaps() {
    if (typeof google === "undefined" || !google.maps) {
@@ -260,7 +260,8 @@ document.addEventListener("DOMContentLoaded", loadGoogleMaps);
 
    document.getElementById("group-affiliate-form").addEventListener("submit", function(event) {
        event.preventDefault();
-       
+
+        getCanadianTime()
        document.getElementById("popup").style.display = "flex";
        let formData = new FormData(this);
     let selectedSheet = 'Sheet2'; // Get selected sheet
